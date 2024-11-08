@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cache-scheduler
+  namespace: msa
+  labels:
+    app: cache-scheduler
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cache-scheduler
+  template:
+    metadata:
+      labels:
+        app: cache-scheduler
+    spec:
+      containers:
+      - name: cache-scheduler
+        image: siokim002/weddy_cache_scheduler:latest
+        ports:
+        - containerPort: 8080
+        resources:
+          requests:
+            cpu: "300m"
+            memory: "512Mi"
+          limits:
+            cpu: "500m"
+            memory: "700Mi"
