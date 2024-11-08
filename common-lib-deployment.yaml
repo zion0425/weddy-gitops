@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: common-lib
+  namespace: msa
+  labels:
+    app: common-lib
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: common-lib
+  template:
+    metadata:
+      labels:
+        app: common-lib
+    spec:
+      containers:
+      - name: common-lib
+        image: siokim002/common_lib:latest
+        ports:
+        - containerPort: 8080
+        resources:
+          requests:
+            cpu: "300m"
+            memory: "512Mi"
+          limits:
+            cpu: "500m"
+            memory: "700Mi"
