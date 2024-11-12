@@ -2,11 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: user
-  namespace: msa
-  labels:
-    app: user
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: user
@@ -17,13 +14,6 @@ spec:
     spec:
       containers:
       - name: user
-        image: siokim002/weddy_user:143
+        image: 654654308839.dkr.ecr.ap-northeast-2.amazonaws.com/weddy/user:latest
         ports:
         - containerPort: 8080
-        resources:
-          requests:
-            cpu: "300m"
-            memory: "512Mi"
-          limits:
-            cpu: "500m"
-            memory: "700Mi"
