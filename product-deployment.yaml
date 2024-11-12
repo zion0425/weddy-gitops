@@ -2,11 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: product
-  namespace: msa
-  labels:
-    app: product
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: product
@@ -17,13 +14,6 @@ spec:
     spec:
       containers:
       - name: product
-        image: siokim002/product:latest
+        image: 654654308839.dkr.ecr.ap-northeast-2.amazonaws.com/weddy/product:latest
         ports:
         - containerPort: 8080
-        resources:
-          requests:
-            cpu: "300m"
-            memory: "512Mi"
-          limits:
-            cpu: "500m"
-            memory: "700Mi"
