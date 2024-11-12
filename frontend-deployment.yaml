@@ -2,11 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend
-  namespace: msa
-  labels:
-    app: frontend
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: frontend
@@ -17,13 +14,9 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: siokim002/sinbi_frontend:97
+        image: 654654308839.dkr.ecr.ap-northeast-2.amazonaws.com/weddy/frontend:latest
         ports:
         - containerPort: 80
-        resources:
-          requests:
-            cpu: "200m"
-            memory: "256Mi"
-          limits:
-            cpu: "500m"
-            memory: "512Mi"
+        envFrom:
+        - secretRef:
+            name: frontend-env
