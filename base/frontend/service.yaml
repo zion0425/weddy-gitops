@@ -8,3 +8,10 @@ spec:
   ports:
     - port: 80
       targetPort: 80
+  annotations:
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      proxy_buffering on;
+      proxy_buffer_size 16k;
+      proxy_max_temp_file_size 0;
+      keepalive_timeout 300;
+      keepalive_requests 100;
