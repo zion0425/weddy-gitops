@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: cache-scheduler
-        image: 654654308839.dkr.ecr.ap-northeast-2.amazonaws.com/weddy/cache_scheduler:latest
+        image: 654654308839.dkr.ecr.ap-northeast-2.amazonaws.com/weddy/cache_scheduler:175
         ports:
         - containerPort: 8080
         resources:
