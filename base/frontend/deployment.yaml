@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: 654654308839.dkr.ecr.ap-northeast-2.amazonaws.com/weddy/frontend:241
+          image: 654654308839.dkr.ecr.ap-northeast-2.amazonaws.com/weddy/frontend:242
           ports:
             - containerPort: 80
           resources:
