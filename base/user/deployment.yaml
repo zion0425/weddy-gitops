@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: user
-        image: 654654308839.dkr.ecr.ap-northeast-2.amazonaws.com/weddy/user:208
+        image: 654654308839.dkr.ecr.ap-northeast-2.amazonaws.com/weddy/user:274
         ports:
         - containerPort: 8080
         resources:
